@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Kochen</title>
+    </head>
+    <body>
+        <h1>Hi, hier kannst du den Essensplan ür eine Woche erstellen!</h1>
+        <p>hier im Plan könnt ihr sehen, was es gibt und falls es euch nicht schmeckt, könnt ihr das in den Notizen auf der Startseite hinterlassen</p>
+        <form action="/cooking_plan" method="POST"> 
+            <% for (let i = 0; i <= 6; i ++) { %>
+                <%= days[i] %> 
+                Was gibt es?: <input type="text" name="dish"><br>
+            <% } %> 
+            <button type="submit">Hinzufügen</button>
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="/tasks">Schau doch wiedervorbei, bei der Aufgabenverteilung</a> 
+        <br>
+        <br>
+        <a href="/logout">Abmelden</a>
+    </body>
+</html>

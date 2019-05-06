@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <title>Aufgabenverteilung</title>
+      <style>
+
+
+* {
+  box-sizing: border-box;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+input {
+  color: rgb(172, 169, 169);
+  border: none;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+#notes_list {
+  margin: 0;
+  padding: 0;
+}
+
+#notes_list li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background:  #c2ebeb;
+  font-size: 18px;
+  transition: 0.2s;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#notes_list li:hover {
+      background: rgb(238, 234, 234);
+} 
+
+ 
+
+
+.add_button {
+  padding: 10px;
+  width: 10%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1> Hier könnt ihr sehen, wer was erledigt!</h1>
+        <ul>
+            <li> Putzen:  <%= wgresponsibillities[0] %> </li>
+            <a href="/task_cleaning">Schau dir alles genauer an!</a> <br><br>
+            <li> Kochen: <%= wgresponsibillities[1] %> </li>
+            <a href="/task_cooking">Schau dir alles genauer an!</a> <br><br>
+            <li> Einkaufen: <%= wgresponsibillities[2] %> </li>
+            <a href="/task_shopping">Schau dir alles genauer an!</a> <br><br>
+            <li> So alles andere: <%= wgresponsibillities[3] %> </li>
+            <a href="/task_rest">Schau dir alles genauer an!</a>
+        </ul>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Ab hier: ein Teil des  Quellcode stammt von W3 School: "https://www.w3schools.com/howto/howto_js_todolist.asp" (letzter Zugriff: 29.11.2017) -->
+        <div id="notes" class="header">
+          <h1>  Notizen innerhalb der WG</h1>
+          <input type="text" id="note" placeholder="Notizen...">
+          <span onclick="newNote()" class="add_button">Hinzufügen</span>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+              
+        <ul id="notes_list">
+          <li class="checked"> eure Notizen kommen hier her</li>    
+        </ul>
+              
+        <script>   //Erklärung  bei shopping_list.ejs
+              
+        // Notizen zu einer Liste hinzufügen bei Buttonklick
+        function newNote() {
+          var li = document.createElement("li");
+          var new_note = document.getElementById("note").value;
+          var t = document.createTextNode(new_note);
+          li.appendChild(t);
+          if (new_note === '') {
+            alert("You must write something!");
+          } else {
+            document.getElementById("notes_list").appendChild(li);
+          }
+            document.getElementById("note").value = "";
+              
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          li.appendChild(span);
+              
+          for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+            }
+          }
+        }
+            
+        var close_buttons = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < close_buttons.length; i++) {
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          close_buttons[i].appendChild(span);
+        }
+        
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+         }
+        }
+              
+         </script>
+
+         <!-- Ab hier: stammt der Quellcode wieder von uns -->
+
+         <br>
+         <br>
+         <br>
+         <br>
+        <a href="/content">Verteilt eure Aufgaben neu!</a>
+        <br>
+        <br>
+        <a href="/logout">Abmelden</a>
+    </body>
+</html>

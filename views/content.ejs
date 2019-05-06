@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hellu!</title>
+    </head>
+    <body>
+        <h1>Hi! Willkommen auf eurer WG-Seite </h1>
+        <h5>Hier könnt ihr alle anstehenden Aufgaben verteilen!</h5>
+        <br> 
+        <form action = "/responsibillities" method = "POST">
+            <h3>Wer putzt?</h3>
+            <input type = "checkbox" name = "wg_cleaner" value = "<%= wgbewohner[0] %>"> <%= wgbewohner[0] %> <br>
+            <input type = "checkbox" name = "wg_cleaner" value = "<%= wgbewohner[1] %>"> <%= wgbewohner[1] %> <br>
+            <input type = "checkbox" name = "wg_cleaner" value = "<%= wgbewohner[2] %>"> <%= wgbewohner[2] %> <br>
+            <input type = "checkbox" name = "wg_cleaner" value = "<%= wgbewohner[3] %>"> <%= wgbewohner[3] %> <br>
+            <br>
+            <br>
+            <h3>Wer kauft ein?</h3>
+            <input type = "checkbox" name = "wg_shopper" value = "<%= wgbewohner[0] %>"> <%= wgbewohner[0] %> <br>
+            <input type = "checkbox" name = "wg_shopper" value = "<%= wgbewohner[1] %>"> <%= wgbewohner[1] %> <br>
+            <input type = "checkbox" name = "wg_shopper" value = "<%= wgbewohner[2] %>"> <%= wgbewohner[2] %> <br>
+            <input type = "checkbox" name = "wg_shopper" value = "<%= wgbewohner[3] %>"> <%= wgbewohner[3] %> <br>
+            <br>
+            <br>
+            <h3>Wer kocht?</h3>
+            <input type = "checkbox" name = "wg_cooker" value = "<%= wgbewohner[0] %>"> <%= wgbewohner[0] %> <br>
+            <input type = "checkbox" name = "wg_cooker" value = "<%= wgbewohner[1] %>"> <%= wgbewohner[1] %> <br>
+            <input type = "checkbox" name = "wg_cooker" value = "<%= wgbewohner[2] %>"> <%= wgbewohner[2] %> <br>
+            <input type = "checkbox" name = "wg_cooker" value = "<%= wgbewohner[3] %>"> <%= wgbewohner[3] %> <br>
+            <br>
+            <br>
+            <h3>Wer erledigt alles andere?</h3>
+            <input type = "checkbox" name = "wg_something" value = "<%= wgbewohner[0] %>"> <%= wgbewohner[0] %> <br>
+            <input type = "checkbox" name = "wg_something" value = "<%= wgbewohner[1] %>"> <%= wgbewohner[1] %> <br>
+            <input type = "checkbox" name = "wg_something" value = "<%= wgbewohner[2] %>"> <%= wgbewohner[2] %> <br>
+            <input type = "checkbox" name = "wg_something" value = "<%= wgbewohner[3] %>"> <%= wgbewohner[3] %> <br>
+            <br>
+            <br>
+            <button type = "submit"> Fertig! </button>
+        </form>
+        <br>
+        <a href="/logout">Abmelden</a>
+    </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+ <!-- Der Quellcode stammt von W3 School: "https://www.w3schools.com/howto/howto_js_todolist.asp" (letzter Zugriff: 29.11.2017) und ist entsprechend modifiziert -->
+<html>
+  <head>
+    <style>
+    body {
+      margin: 0;
+      min-width: 250px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      list-style-type: none;
+      background: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Dunkler, wenn man mit der Maus drüber ist */
+    ul li:hover {
+      background: #ddd;
+    } 
+
+    /* Wenn man klickt, wird das Listenelement durchgestrichen und dunkler */
+    ul li.checked {
+      background: #888;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+  /* Bevor man das Listenelement anklickt */
+    ul li.checked::before {
+      content: '';
+      position: absolute;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      top: 10px;
+      left: 16px;
+      transform: rotate(45deg);
+      height: 15px;
+      width: 7px;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 12px 16px 12px 16px;
+    }
+
+    .close:hover {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .header {
+      background-color: #c2ebeb;
+      padding: 20px 40px;
+      color: white;
+      text-align: center;
+    }
+
+    .header:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    input {
+      border: none;
+      width: 75%;
+      padding: 10px;
+      float: left;
+      font-size: 16px;
+    }
+
+    .add_button {
+      padding: 10px;
+      width: 25%;
+      background: #d9d9d9;
+      color: #555;
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    </style>
+    <title>Einkaufsliste</title>
+  </head>
+  <body>
+
+    <div id="to_do_list" class="header">
+      <h1> Die <%= wgname %> Einkaufsliste</h1>
+      <input type="text" id="shopping" placeholder="Was braucht ihr?">
+      <span onclick="newElement()" class="add_button">Hinzufügen</span>
+    </div>
+
+    <ul id="shopping_list">
+      <li class="checked"> WG Einkaufsliste</li>
+    </ul>
+
+    <div id="private_to_do_list" class="header">
+      <h1> Deine persönliche Einkaufsliste</h1>
+      <input type="text" id="shopping2" placeholder="Was brauchst du?">
+      <span onclick="newElement2()" class="add_button">Hinzufügen</span>
+    </div>
+      
+    <ul id="shopping_list2">
+     <li class="checked">Sachen, die du nur für dich brauchst</li>
+    </ul>
+
+   <script>
+
+       // Buttons zum schließen
+    var close_buttons = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < close_buttons.length; i++) {            //man durchläuft ein Array solange wie die Liste (laufvaribale i)
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      close_buttons[i].appendChild(span);                  
+    }
+
+    // Wenn Button gedrückt, wird das Element nicht wiedergegeben (display)
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    } 
+
+    //setzt Hacken, wenn das Element angeklickt worden ist
+    var list = document.querySelector('.shopping_list');                  //sucht nach der gesamten Liste für den WG Einkauf
+    list.addEventListener('click', function(ev) {             //fügt der Liste  hinzu, was passiert, wenn geklickt wird 
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');                  //schaltet um auf checked und oben im CSS Part steht dann, dass das Element durchgestrichen wird und der Hintergrund dunkler wird
+    }
+    }, false);
+    
+
+
+    // neues Listen Element für die Wg Liste, wenn auf den Hinzufügen Button geklickt wird 
+    function newElement() {                        //Funktion die aufgerufen wird, wenn man bei der ersten Liste auf hinzufügen drückt
+      var li = document.createElement("li");          //Listenelement mit document.createElement("li) erzeugen
+      var list_item = document.getElementById("shopping").value;   //mit getElementbyID referenz auf das Texteingabefeld und mit value greift man auf den eingegebenen Wert zu
+      var t = document.createTextNode(list_item);                  //erzeugt Text
+      li.appendChild(t);                                            //dem erzeugten Element wird der Text hinzugefügt
+      if (list_item === '') {                                        //Bedingung: im Eingabefeld wurde nichts eingegeben, aber auf den Button gedrückt 
+         alert("You must write something!");                              //Hinweis, dass man was schreiben soll
+      } else {
+          document.getElementById("shopping_list").appendChild(li);       //referiert auf die gesamte Liste und fügt dieser das erzeugte Element hinzu
+      }
+        document.getElementById("shopping").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);                                  
+      li.appendChild(span);                                  
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+    }
+
+    // Erzeugt Listenelement für die persönliche Einkaufsliste , wenn auf Hinzufügen geklickt wird 
+    function newElement2() {
+      var li = document.createElement("li");           
+      var list_item = document.getElementById("shopping2").value;
+      var t = document.createTextNode(list_item);
+      li.appendChild(t);
+      if (list_item === '') {
+        alert("You must write something!");
+      } else {
+       document.getElementById("shopping_list2").appendChild(li);
+      }
+      document.getElementById("shopping2").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {      //die Funktion wird ausgeführt, wenn auf den Lösch Button gedrückt wird 
+        var div = this.parentElement;
+        div.style.display = "none";          //das angeklickte Element wird nicht mehr angezeigt
+      }
+      }
+    } 
+    
+    //setzt Hacken, wenn das Element angeklickt worden ist
+    var list = document.querySelector('.shopping_list2');                  //sucht nach der zweiten Liste
+    list.addEventListener('click', function(ev) {             //fügt der Liste  hinzu, was passiert, wenn geklickt wird 
+    if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');                  //schaltet um auf checked und oben im CSS Part steht dann, dass das Element durchgestrichen wird und der Hintergrund dunkler wird
+    }
+    }, false);
+
+
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <a href="/tasks">Schau doch wieder vorbei, bei der Aufgabenverteilung</a> 
+    <br>
+    <br>
+    <a href="/logout">Abmelden</a>
+  </body>
+</html>

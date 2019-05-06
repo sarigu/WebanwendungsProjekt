@@ -1,0 +1,36 @@
+{"k":"0000000078","o":"0000000184","v":"001"}
+{"_id":2,"_uid":2,"_dt":1509926852928,"_s":"076bd1d2e77d11fe53edf86f91e1ac4f"}
+{"wgname":"hellu","password":"sha1$b9612038$1$67ad6fd8b288ff4d98f1e034aa84048d2213f54c","user1":"Frieda","user2":"Sprotte","user3":"Trude","user4":"Wilma","_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000176","v":"001"}
+{"_id":3,"_uid":3,"_dt":1509928075953,"_s":"1dea4bad89f90eebba5d502485274cfa"}
+{"wgname":"moin","password":"sha1$0b4bb8c4$1$e19b8d815cd85c36f690819e19cc085f57734041","user1":"eins","user2":"zwei","user3":"drei","user4":"vier","_id":{"$wrap":"$oid","v":3}}
+{"k":"0000000078","o":"0000000173","v":"001"}
+{"_id":4,"_uid":4,"_dt":1509929234975,"_s":"91f8cd67a39ff4a7ed9f0557ce3496b4"}
+{"wgname":"wildenhühner","password":"sha1$950e670a$1$52494c95af0ec78bb3d21ef702f445e2b737a045","user1":"1","user2":"2","user3":"3","user4":"4","_id":{"$wrap":"$oid","v":4}}
+{"k":"0000000078","o":"0000000196","v":"001"}
+{"_id":5,"_uid":5,"_dt":1509929402031,"_s":"af488d1607acb5ecab59885fb54ccd73"}
+{"wgname":"lichterkette","password":"sha1$87058469$1$cc5f0d9d5bf02c63c988f97d80aa6f6de62993fa","user1":"stern","user2":"licht","user3":"weihnachten","user4":"lametta","_id":{"$wrap":"$oid","v":5}}
+{"k":"0000000078","o":"0000000185","v":"001"}
+{"_id":6,"_uid":6,"_dt":1509929717496,"_s":"801493d52e3c2c03bf1ee38a0d6bed2e"}
+{"wgname":"netflix","password":"sha1$7241b242$1$f215ecc346c1fa0450ea5f0d4b0b81c2b84515f0","user1":"serien","user2":"filme","user3":"dokus","user4":"animes","_id":{"$wrap":"$oid","v":6}}
+{"k":"0000000078","o":"0000000268","v":"001"}
+{"_id":7,"_uid":7,"_dt":1510678409992,"_s":"0d3c9d79a902b651a6f9cec7032530f6"}
+{"wgname":"riverdale","password":"sha1$5652dfb7$1$36565cd33fd9a40c359e7e8eec4513db4ecdb2b3","user1":"jughead","user2":"veronica","user3":"betty","user4":"archie","wg_cleaner":"wg1","wg_cooker":"wg2","wg_shopper":"wg3","wg_something":"wg4","_id":{"$wrap":"$oid","v":7}}
+{"k":"0000000078","o":"0000000270","v":"001"}
+{"_id":8,"_uid":8,"_dt":1510679040261,"_s":"7867677bac0e0c191cd8a4866482dca5"}
+{"wgname":"1million","password":"sha1$a8b2d3e4$1$e49f3b8eec94444ac31422db2db5e1859324cc04","user1":"sori na","user2":"junson","user3":"may j lee","user4":"lia kim","wg_cleaner":"wg1","wg_cooker":"wg2","wg_shopper":"wg3","wg_something":"wg4","_id":{"$wrap":"$oid","v":8}}
+{"k":"0000000078","o":"0000000311","v":"001"}
+{"_id":9,"_uid":9,"_dt":1510699071529,"_s":"82e043385944cbb262e9151a64318ec0"}
+{"wgname":"hamburgknights","password":"sha1$4fbf06e7$1$9c379aa61880034c5ea8ce4423ad52630aecec18","user1":"k1","user2":"k2","user3":"k3","user4":"k4","wg_cleaner":"Mitbewohner 1: k1","wg_cooker":"Mitbewohner 2: k2","wg_shopper":"Mitbewohner 3: k3","wg_something":"Mitbewohner 4: k4","_id":{"$wrap":"$oid","v":9}}
+{"k":"0000000080","o":"0000000329","v":"001"}
+{"_id":10,"_uid":10,"_dt":1512076853866,"_s":"2cbeda0616d760f5c8fcac159f1c5eaa"}
+{"wgname":"creme","password":"sha1$964f0b73$1$f7527beab1bb60fc9e8385918d10dad9d0b2f5ea","user1":"hand","user2":"fuß","user3":"kuchen","user4":"cupcake","wg_cleaner":"Mitbewohner 1: hand","wg_cooker":"Mitbewohner 2: fuß","wg_shopper":"Mitbewohner 3: kuchen","wg_something":"Mitbewohner 4: cupcake","_id":{"$wrap":"$oid","v":10}}
+{"k":"0000000080","o":"0000000287","v":"001"}
+{"_id":11,"_uid":11,"_dt":1512077545828,"_s":"8abc8f17543d43566d99838d4d4f2330"}
+{"wgname":"aloha","password":"sha1$dfc30605$1$31b075ae28d02c47b76bec0b0ef073bb4f70efc4","wgbewohner":[{"user1":"lilo","user2":"stich","user3":"jamba","user4":"quikli"}],"responsible_user":[{"wg_cleaner":"","wg_cooker":"","wg_shopper":"","wg_something":""}],"_id":{"$wrap":"$oid","v":11}}
+{"k":"0000000080","o":"0000000465","v":"001"}
+{"_id":12,"_uid":12,"_dt":1512127818150,"_s":"b285772104ded927450a44b3cd8d7f1d"}
+{"wgname":"surfen","password":"sha1$99d8a4d8$1$aedca9b4618b63e0ced006c1d859795f2af1f246","wgbewohner":{"user1":"nacht","user2":"nachti","user3":"müde","user4":"schlaf"},"responsible_user":{"wg_cooker":"Mitbewohner: müde","wg_shopper":"Mitbewohner: nacht","wg_something":"Mitbewohner: nacht","wg_cleaner":"Mitbewohner: schlaf"},"_id":{"$wrap":"$oid","v":12},"Mitbewohner 2: nachti":"","Mitbewohner 3: müde":"","Mitbewohner 4: schlaf":"","Mitbewohner 1: nacht":""}
+{"k":"0000000080","o":"0000000467","v":"001"}
+{"_id":12,"_uid":12,"_dt":1512128034325,"_s":"35b338df4c5519fae3a7ba819fd26e2a"}
+{"wgname":"surfen","password":"sha1$99d8a4d8$1$aedca9b4618b63e0ced006c1d859795f2af1f246","wgbewohner":{"user1":"nacht","user2":"nachti","user3":"müde","user4":"schlaf"},"responsible_user":{"wg_cooker":"Mitbewohner: nacht","wg_shopper":"Mitbewohner: schlaf","wg_something":"Mitbewohner: nachti","wg_cleaner":"Mitbewohner: schlaf"},"_id":{"$wrap":"$oid","v":12},"Mitbewohner 2: nachti":"","Mitbewohner 3: müde":"","Mitbewohner 4: schlaf":"","Mitbewohner 1: nacht":""}

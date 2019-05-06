@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Kochplan</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 16px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Hi, hier könnt ihr sehen, was es diese Woche zu Essen gibt!</h1>
+        <p> hier im Plan könnt ihr sehen was es gibt und falls es euch nicht schmeckt, könnt ihr das in den Notizen auf der Startseite hinterlassen</p>
+        <table>
+            <tr>
+              <th>Wochentag</th>
+              <th>Leckerei</th>
+            </tr>
+            <tr>
+              <td>Montag</td>
+              <td><%= dishes[0][0]%></td>
+            </tr>
+            <tr>
+                <td>Dienstag</td>
+                <td><%= dishes[0][1]%></td>
+            </tr>
+            <tr>
+                <td>Mittwoch</td>
+                <td><%= dishes[0][2]%></td>
+            </tr>
+               <td>Donnerstag</td>
+               <td><%= dishes[0][3]%></td>
+            </tr>
+              <td>Freitag</td>
+              <td><%= dishes[0][4]%></td>
+            </tr>
+                <td>Samstag</td>
+                <td><%= dishes[0][5]%></td>
+            </tr>
+                <td>Sonntag</td>
+              <td><%= dishes[0][6]%> </td>
+            </tr>
+          </table> 
+        <br>
+        <br>
+        <br>
+        <br>        
+        <br>
+        <a href="/tasks">Schau doch wieder vorbei, bei der Aufgabenverteilung</a> 
+        <br>
+        <br>
+        <a href="/logout">Abmelden</a>
+    </body>
+</html>

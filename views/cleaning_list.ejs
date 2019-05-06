@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- Der Quellcode stammt von W3 School: "https://www.w3schools.com/howto/howto_js_todolist.asp" (letzter Zugriff: 29.11.2017) und ist entsprechend bearbeitet worden von uns -->
+<html>
+  <head>
+    <style>
+    body {
+      margin: 0;
+      min-width: 250px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    ul {
+     margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      list-style-type: none;
+      background: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+
+    ul li:hover {
+      background: #ddd;
+    }
+
+
+    ul li.checked {
+      background: #888;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+
+    ul li.checked::before {
+      content: '';
+      position: absolute;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      top: 10px;
+      left: 16px;
+      transform: rotate(45deg);
+      height: 15px;
+      width: 7px;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 12px 16px 12px 16px;
+    }
+
+    .close:hover {
+      background-color: #f44336;
+      color: white;
+    }
+
+
+    .header {
+      background-color: #c2ebeb;
+      padding: 30px 40px;
+      color: white;
+      text-align: center;
+    }
+
+
+    .header:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    input {
+      border: none;
+      width: 75%;
+      padding: 10px;
+      float: left;
+      font-size: 16px;
+    }
+
+    .add_button {
+      padding: 10px;
+      width: 25%;
+      background: #d9d9d9;
+      color: #555;
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    </style>
+
+    <title>Putzen</title>
+  </head>
+  <body>
+
+  <div id="to_do_list" class="header">
+      <h1> Damit <%= wgname %> sauber bleibt</h1>
+      <input type="text" id="cleaning_task" placeholder="Was muss geputzt werden?">
+      <input type="text" id="cleaning_description" placeholder="Was genau muss dabei beachtet werden?">
+      <span onclick="newElement()" class="add_button">Hinzufügen</span>
+  </div>
+
+  <ul id="cleaning_list">
+    <li class="checked">Beispiel (klicke hier, wenn du was erledigt hast)</li>
+  </ul>
+
+  <script>
+
+    function newElement() {
+      var li = document.createElement("li");
+      var list_item = document.getElementById("cleaning_task").value;
+      var list_item2 = document.getElementById("cleaning_description").value;
+      var t = document.createTextNode(list_item);
+      var t2 = document.createTextNode(list_item2);
+      li.appendChild(t);
+      li.appendChild(t2);
+      if (list_item === '' || list_item2 === '') {
+       alert("You must write something!");
+      } else {
+        document.getElementById("cleaning_list").appendChild(li);
+      }
+      document.getElementById("cleaning_task").value = "";
+      document.getElementById("cleaning_description").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+    }
+
+    var close_buttons = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < close_buttons.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      close_buttons[i].appendChild(span);
+    }
+
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+    //setzt Hacken, wenn das Element angeklickt worden ist
+    var list = document.querySelector('ul');                  //sucht nach der gesamten Liste 
+    list.addEventListener('click', function(ev) {             //fügt der Liste  hinzu, was passiert, wenn geklickt wird 
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');                  //schaltet um auf checked und oben im CSS Part steht dann, dass das Element durchgestrichen wird und der Hintergrund dunkler wird
+    }
+    }, false);
+
+  </script>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <a href="/tasks">Schau doch wieder vorbei, bei der Aufgabenverteilung</a> 
+  <br>
+  <br>
+  <a href="/logout">Abmelden</a>
+
+  </body>
+</html>
