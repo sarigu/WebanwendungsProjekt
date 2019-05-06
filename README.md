@@ -1,5 +1,5 @@
 # WebanwendungsProjekt
-für aprg 
+ein Projekt im Rahmen von APRG
 
 Hallo, 
 
